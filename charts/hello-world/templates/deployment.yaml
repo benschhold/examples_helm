@@ -6,6 +6,7 @@ metadata:
     {{- include "hello-world.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  progressDeadlineSeconds: 10
   selector:
     matchLabels:
       {{- include "hello-world.selectorLabels" . | nindent 6 }}
